@@ -3,7 +3,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        List<StaffMember> staff = new ArrayList<>(List.of(
+        List<StaffMember> staffs = new ArrayList<>(List.of(
                 new Volunteer(StaffMember.staffIDCounter, "Sebastian Wilder", "California", 2000),
                 new SalariedEmployee(StaffMember.staffIDCounter, "Mia Dolan", "Nevada", 2500.50, 20),
                 new HourlySalaryEmployee(StaffMember.staffIDCounter, "Luke Dunphy", "California", 40, 10.50),
@@ -19,18 +19,9 @@ public class Main {
                     while (true){
                         int option = Utility.insertEmployeeMenu();
                         switch (option){
-                            case 1->{
-                                StaffMember volunteer = Utility.inputStaffInfo(Volunteer.class);
-                                staff.add(volunteer);
-                            }
-                            case 2->{
-                                StaffMember salariedEmployee = Utility.inputStaffInfo(SalariedEmployee.class);
-                                staff.add(salariedEmployee);
-                            }
-                            case 3->{
-                                StaffMember hourlySalariedEmployee = Utility.inputStaffInfo(HourlySalaryEmployee.class);
-                                staff.add(hourlySalariedEmployee);
-                            }
+                            case 1-> Utility.inputStaffInfo(Volunteer.class, staffs);
+                            case 2-> Utility.inputStaffInfo(SalariedEmployee.class, staffs);
+                            case 3-> Utility.inputStaffInfo(HourlySalaryEmployee.class, staffs);
                             case 4->{
                                 System.out.println("\n");
                                 continue MAIN;
@@ -38,9 +29,9 @@ public class Main {
                         }
                     }
                 }
-                case 2 -> Utility.updateEmployeeByID(staff);
-                case 3 ->{}
-                case 4 -> Utility.removeEmployeeByID(staff);
+                case 2 -> Utility.updateEmployeeByID(staffs);
+                case 3 -> Utility.displayEmployeeList(staffs);
+                case 4 -> Utility.removeEmployeeByID(staffs);
                 case 5 ->{
                     System.out.println(Utility.GREEN + "============================================");
                     System.out.println("=    Thank You For Using This Program!!!   =");
