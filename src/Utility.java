@@ -110,7 +110,7 @@ public class Utility {
                     table.addCell("$" + salariedEmployee.getBonus());
                 }
                 case "HourlySalaryEmployee" -> {
-                    HourlySalaryEmployee hourlySalaryEmployee = (HourlySalaryEmployee) staffMember;
+                        HourlySalaryEmployee hourlySalaryEmployee = (HourlySalaryEmployee) staffMember;
                     table.addCell(String.valueOf(hourlySalaryEmployee.getHourWorked()));
                     table.addCell("$" + hourlySalaryEmployee.getRate());
                 }
@@ -157,7 +157,7 @@ public class Utility {
                         ((SalariedEmployee) staffMember).setBonus(newBonus);
                         System.out.println(CHECK_MARK + GREEN + " Bonus has updated successfully!!!" + RESET_TEXT_COLOUR + "\n");
                     }else if(type.equals("HourlySalaryEmployee")){
-                        double newRate = Double.parseDouble(validation("^\\d+(\\.\\d+)?$", "=> Change hourly wage to : ", "It has to be a positive number!!!"));
+                        double newRate = Double.parseDouble(validation("^\\d+(\\.\\d+)?$", "=> Change rate to : ", "It has to be a positive number!!!"));
                         ((HourlySalaryEmployee) staffMember).setRate(newRate);
                         System.out.println(CHECK_MARK + GREEN + " Rate has updated successfully!!!" + RESET_TEXT_COLOUR + "\n");
                     }
