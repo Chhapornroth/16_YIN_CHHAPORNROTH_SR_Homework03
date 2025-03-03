@@ -110,7 +110,7 @@ public class Utility {
                     table.addCell("$" + salariedEmployee.getBonus());
                 }
                 case "HourlySalaryEmployee" -> {
-                        HourlySalaryEmployee hourlySalaryEmployee = (HourlySalaryEmployee) staffMember;
+                    HourlySalaryEmployee hourlySalaryEmployee = (HourlySalaryEmployee) staffMember;
                     table.addCell(String.valueOf(hourlySalaryEmployee.getHourWorked()));
                     table.addCell("$" + hourlySalaryEmployee.getRate());
                 }
